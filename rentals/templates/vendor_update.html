@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+        <h1>VENDOR UPDATE FORM</h1>
+        <hr class="thick">
+        <br/><br/>
+
+     <center>
+         <div class="row">
+             <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <div class="card text-bg-dark text-center">
+                        <div class="card-header">
+                            Please enter updated information below
+                        </div>
+
+                        <div class="card-body">
+
+                            <form method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <input type="submit" value="Save" class="btn btn-secondary">
+                            </form>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+         </div>
+     </center>
+</div>
+
+{% endblock %}

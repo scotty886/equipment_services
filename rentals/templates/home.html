@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+    <div class="bg"
+                       style="background-image:
+                            url('{% static 'media/techno1.jpg' %}');
+                            background-size: cover;
+                           background-position: center;
+                           height: 150vh;">
+        <br/>
+           <h1>HOMEPAGE</h1>
+           <hr class="thick">
+           <br/><br/>
+
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Welcome to the Film Production Rental System</h2>
+            </div>
+             <div class="col-md-6">
+                   {% if user.is_authenticated %}
+                         <h3> <b>You can select rental information using the tabs above</b></h3>
+                            {% else %}
+                        <h3> <b>Login above to review rental lists and enter rental information!</b></h3>
+                         {% endif %}
+
+             </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+

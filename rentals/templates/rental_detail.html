@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+        <h1>SERVICE DETAILS</h1>
+        <hr class="thick">
+        <br/><br/>
+
+     <center>
+         <div class="row">
+             <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card text-bg-dark text-center border-light">
+                        <div class="card-header">
+                            <h3><b>{{rental.production}}</b></h3>
+                            <hr>
+                        </div>
+
+                        <div class="card-body">
+                            <h5>Rental Item:  <b>{{rental.rental_item}}</b></h5>
+                            <h5>Start Rental:  <b>{{rental.start_rental_date}}</b></h5>
+
+                            <h5>End Rental:  <b>{{rental.end_rental_date}}</b></h5>
+                            <h5>Scene Info:  <b>{{rental.scene_info}}</b></h5>
+                            <br/>
+                            <h5>Requestor:  <b>{{rental.last_name}}, {{rental.first_name}}</b></h5>
+                            <h5>Title:  <b></b>{{rental.title}}</h5>
+                            <h5>Department:  <b></b>{{rental.department}}</h5>
+                            <br/>
+                            <h5>Vendor:  <a href="{% url 'vendor_detail' rental.vendor.id %}" class="btn btn-outline-light"><b>{{rental.vendor}}</b></a></h5>
+                            <h5>Quote Number:  <b>{{rental.quote_number}}</b></h5>
+                            <h5>Purchase Order:  <b>{{rental.purchase_order}}</b></h5>
+                            <h5>Rental Rate:  <b>{{rental.rental_rate}}</b></h5>
+                            <h5>Rental Days:  <b>{{rental.rental_days}}</b></h5>
+                            <h5>Rental Type:  <b>{{rental.rental_type}}</b></h5>
+                            <h5>Rental Category:  <b>{{rental.category}}</b></h5>
+                            <h5>Add Taxes or Fees:  <b>{{rental.addl_tax_fees}}</b></h5>
+                            <h5>Total:  <b>${{rental.total_cost|intcomma}}</b></h5>
+                            <h5>Payment Type: <a>{{rental.payment_type}}</a></h5>
+                            <br/>
+                            <hr class="thick">
+                            <h5><b>NOTES SECTION</b></h5>
+                            <br/>
+                            <h6>Note 1:  <b>{{rental.notes1}}</b></h6>
+                            <hr>
+                            <h6>Note 2:  <b>{{rental.notes2}}</b></h6>
+                            <hr>
+                            <h6>Note 3:  <b>{{rental.notes3}}</b></h6>
+                            <hr>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'rental_update' rental.id %}" class="btn btn-outline-light">Update</a>
+                             <a href="{% url 'rental_delete' rental.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                        <br/>
+                    </div>
+                    <div class="col-md-3"></div>
+
+                    <div class="container">
+                      <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <b>PRINT OUT REPORT</b>
+                          </div>
+                          <div class="card-body">
+                            <a href="{% url 'rental_detail_txt' rental.id %}" class="btn btn-secondary">Print to Text</a>&nbsp;&nbsp;
+                              <a href="{% url 'rental_detail_pdf' rental.id %}" class="btn btn-success">Print to PDF</a>
+                          </div>
+                      </div>
+                    </div>
+
+                </div>
+         </div>
+     </center>
+</div>
+<br/><br/>
+
+{% endblock %}

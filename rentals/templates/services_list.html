@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+        <h1>OFFICE SERVICES LIST</h1>
+        <hr class="thick">
+        <br/><br/>
+
+                <table class="table table-striped table-dark table-bordered my-5">
+                        <thead class="table-dark">
+
+                            <tr>
+                              <th scope="col">Order Details</th>
+                              <th scope="col">Service</th>
+                              <th scope="col">Start Service</th>
+                              <th scope="col">End Service</th>
+                             <th scope="col">Days to End</th>
+                              <th scope="col">Description</th>
+                             <th scope="col">Service Location</th>
+                              <th scope="col">Service Vendor</th>
+                              <th scope="col">Requestor</th>
+                              <th scope="col">Department</th>
+                              <th scope="col">PO Number</th>
+                             <th scope="col">Service Rate</th>
+                              <th scope="col">Total</th>
+
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {% for service in services %}
+                            <tr>
+                              <td><a href="{% url 'service_detail' service.id %}" class="btn btn-success">Details</a></td>
+                              <td>{{service.service}}</td>
+                              <td>{{service.start_day_of_week }}, {{service.start_service_date}}</td>
+                              <td>{{service.end_day_of_week}},{{service.end_service_date}}</td>
+                              <td>{{service.days_to_end_service}}</td>
+                              <td>{{service.description}}</td>
+                              <td>{{service.service_location}}</td>
+                             <td>{{service.vendor}}</td>
+                              <td>{{service.requestor}}</td>
+                              <td>{{service.department}}</td>
+                              <td>{{service.purchase_order}}</td>
+                                 <td>{{service.rate|intcomma}}</td>
+                              <td>${{service.total|intcomma}}</td>
+
+                            </tr>
+                             {% endfor %}
+                          </tbody>
+                </table>
+
+     <div class="container">
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                   <div class="card bg-dark text-white border-white">
+                          <div class="card-header">
+                            <b>PRINT OUT REPORT</b>
+                          </div>
+                          <div class="card-body">
+                            <a href="{% url 'service_list_text' %}" class="btn btn-outline-light">Print to Text</a>&nbsp;&nbsp;
+                              <a href="{% url 'service_list_csv' %}" class="btn btn-success">Print to CSV</a>&nbsp;&nbsp;
+                              <a href="{% url 'service_list_pdf' %}" class="btn btn-secondary">Print to PDF</a>
+                          </div>
+                   </div>
+
+              </div>
+
+              <div class="col-md-4">
+                  <div class="alert alert-success" role="alert">
+                      <h5>List Total: <b>${{total_cost|intcomma}}</b></h5>
+                    </div>
+              </div>
+     </div>
+
+    <br/><br/><br/><br/>
+</div>
+
+{% endblock %}
