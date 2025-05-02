@@ -4330,3 +4330,1280 @@ Traceback (most recent call last):
                   ^^^^^^^^^^^^^
 AttributeError: 'Rental' object has no attribute 'total'
 ERROR 40 2025-04-27 22:54:29 basehttp "GET /search_rentals/?q=monster HTTP/1.1" 500 77041 log_message 213
+ERROR 40 2025-05-01 00:42:44 log Internal Server Error: /admin/vehicles/vehicle/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: vehicles_vehicle
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 2024, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/options.py", line 867, in get_changelist_instance
+    return ChangeList(
+        request,
+    ...<12 lines>...
+        self.search_help_text,
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/views/main.py", line 146, in __init__
+    self.get_results(request)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/contrib/admin/views/main.py", line 313, in get_results
+    result_count = paginator.count
+                   ^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/paginator.py", line 110, in count
+    return c()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 604, in count
+    return self.query.get_count(using=self.db)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 644, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 626, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1622, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: vehicles_vehicle
+ERROR 40 2025-05-01 00:42:44 basehttp "GET /admin/vehicles/vehicle/ HTTP/1.1" 500 190653 log_message 213
+ERROR 40 2025-05-01 20:32:20 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:32:20 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:33:46 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:33:46 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:33:50 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:33:50 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:34:44 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:34:44 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:34:53 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:34:53 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:35:57 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles/vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles/vehicles_list.html
+ERROR 40 2025-05-01 20:35:57 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79495 log_message 213
+ERROR 40 2025-05-01 20:36:37 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:36:37 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:36:40 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 26, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:36:40 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79297 log_message 213
+ERROR 40 2025-05-01 20:50:41 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 25, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:50:41 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79306 log_message 213
+ERROR 40 2025-05-01 20:50:57 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 25, in vehicle_list
+    return render(request, 'vehicles_list.html', context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicles_list.html
+ERROR 40 2025-05-01 20:50:57 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 79306 log_message 213
+ERROR 40 2025-05-01 20:53:12 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 19, in vehicle_list
+    return render(request, 'vehicle_list.html', {'vehicles': vehicles, 'total_cost': total_cost})
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 243, in render
+    nodelist.append(node.render_annotated(context))
+                    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'vehicle_detail' not found. 'vehicle_detail' is not a valid view function or pattern name.
+ERROR 40 2025-05-01 20:53:12 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 161312 log_message 213
+ERROR 40 2025-05-01 21:05:26 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 18, in vehicle_list
+    vehicle.rental_duration = vehicle.rental_duration
+                              ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Vehicle' object has no attribute 'rental_duration'
+ERROR 40 2025-05-01 21:05:26 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 62516 log_message 213
+ERROR 40 2025-05-01 21:47:27 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: "'vehicle_detail'"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 24, in vehicle_list
+    return render(request, 'vehicle_list.html', {'vehicles': vehicles, 'total_cost': total_cost, 'days': days})
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 567, in invalid_block_tag
+    raise self.error(
+    ...<8 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 37: ''vehicle_detail'', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
+ERROR 40 2025-05-01 21:47:27 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 224625 log_message 213
+ERROR 40 2025-05-01 21:48:13 log Internal Server Error: /vehicles/vehicle/1/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rental_update' with arguments '('',)' not found. 1 pattern(s) tried: ['rental_update/(?P<pk>[0-9]+)/\\Z']
+ERROR 40 2025-05-01 21:48:13 basehttp "GET /vehicles/vehicle/1/ HTTP/1.1" 500 158296 log_message 213
+ERROR 40 2025-05-01 21:48:58 log Internal Server Error: /vehicles/vehicle/1/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'rental_detail_txt' with arguments '('',)' not found. 1 pattern(s) tried: ['rental_detail_txt/(?P<pk>[0-9]+)/\\Z']
+ERROR 40 2025-05-01 21:48:58 basehttp "GET /vehicles/vehicle/1/ HTTP/1.1" 500 156376 log_message 213
+ERROR 40 2025-05-01 22:01:32 log Internal Server Error: /vehicles/vehicle/1/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 518, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 489, in parse
+    raise self.error(token, e)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 487, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '()' from 'vehicle.cal_rates()'
+ERROR 40 2025-05-01 22:01:32 basehttp "GET /vehicles/vehicle/1/ HTTP/1.1" 500 204740 log_message 213
+ERROR 40 2025-05-01 22:35:52 log Internal Server Error: /vehicles/vehicle_form/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_create.html
+ERROR 40 2025-05-01 22:35:52 basehttp "GET /vehicles/vehicle_form/ HTTP/1.1" 500 77456 log_message 213
+ERROR 40 2025-05-01 22:37:51 log Internal Server Error: /vehicles/vehicle_form/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: vehicles_vehicle.days
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/edit.py", line 182, in post
+    return super().post(request, *args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/edit.py", line 151, in post
+    return self.form_valid(form)
+           ~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 98, in form_valid
+    return super().form_valid(form)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/edit.py", line 133, in form_valid
+    self.object = form.save()
+                  ~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/forms/models.py", line 554, in save
+    self.instance.save()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/models.py", line 53, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/backends/sqlite3/base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: vehicles_vehicle.days
+ERROR 40 2025-05-01 22:37:51 basehttp "POST /vehicles/vehicle_form/ HTTP/1.1" 500 195384 log_message 213
+ERROR 40 2025-05-02 00:20:22 log Internal Server Error: /vehicles/vehicle_delete/3/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_confirm_delete.html
+ERROR 40 2025-05-02 00:20:22 basehttp "GET /vehicles/vehicle_delete/3/ HTTP/1.1" 500 77816 log_message 213
+ERROR 40 2025-05-02 00:20:31 log Internal Server Error: /vehicles/vehicle_delete/3/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_confirm_delete.html
+ERROR 40 2025-05-02 00:20:31 basehttp "GET /vehicles/vehicle_delete/3/ HTTP/1.1" 500 77816 log_message 213
+ERROR 40 2025-05-02 00:42:25 log Internal Server Error: /vehicles/vehicle_list/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 53, in vehicle_list
+    return render(request, 'vehicle_list.html', {'vehicles': vehicles, 'total_cost': total_cost})
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'vehicle_list_txt' not found. 'vehicle_list_txt' is not a valid view function or pattern name.
+ERROR 40 2025-05-02 00:42:25 basehttp "GET /vehicles/vehicle_list/ HTTP/1.1" 500 152160 log_message 213
+ERROR 40 2025-05-02 18:07:13 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_search.html, vehicles/vehicle_list.html
+ERROR 40 2025-05-02 18:07:13 basehttp "GET /vehicles/vehicle_search/ HTTP/1.1" 500 80504 log_message 213
+ERROR 40 2025-05-02 18:07:39 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_search.html, vehicles/vehicle_list.html
+ERROR 40 2025-05-02 18:07:39 basehttp "GET /vehicles/vehicle_search/ HTTP/1.1" 500 80504 log_message 213
+ERROR 40 2025-05-02 18:08:32 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_search.html, vehicles/vehicle_list.html
+ERROR 40 2025-05-02 18:08:32 basehttp "GET /vehicles/vehicle_search/ HTTP/1.1" 500 80338 log_message 213
+ERROR 40 2025-05-02 18:08:54 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_search.html, vehicles/vehicle_list.html
+ERROR 40 2025-05-02 18:08:54 basehttp "GET /vehicles/vehicle_search/ HTTP/1.1" 500 80504 log_message 213
+ERROR 40 2025-05-02 18:09:49 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: vehicle_search.html, vehicles/vehicle_list.html
+ERROR 40 2025-05-02 18:09:49 basehttp "GET /vehicles/vehicle_search/ HTTP/1.1" 500 80491 log_message 213
+ERROR 40 2025-05-02 18:10:31 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 151, in get_queryset
+    return Vehicle.objects.filter(Q(driver__icontains=query) | Q(department__name__icontains=query) | Q(vendor__name__icontains=query) | Q(vehicle_type__icontains=query) | Q(plate_number__contains=query) | Q(po_number__contains=query))
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1481, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1499, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1506, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1643, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1500, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1585, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1399, in build_lookup
+    lhs = self.try_transform(lhs, name, lookups)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1455, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'name__icontains' for ForeignKey or join on the field not permitted.
+ERROR 40 2025-05-02 18:10:31 basehttp "GET /vehicles/vehicle_search/?q=Hertz HTTP/1.1" 500 140172 log_message 213
+ERROR 40 2025-05-02 18:12:11 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 151, in get_queryset
+    return Vehicle.objects.filter(Q(driver__icontains=query) | Q(department__department_name__icontains=query) | Q(vendor__vendor_name__icontains=query) | Q(vehicle_type__icontains=query) | Q(plate_number__contains=query) | Q(po_number__contains=query))
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1481, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1499, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1506, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1643, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1500, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1585, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1399, in build_lookup
+    lhs = self.try_transform(lhs, name, lookups)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1455, in try_transform
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Unsupported lookup 'vendor_name__icontains' for ForeignKey or join on the field not permitted.
+ERROR 40 2025-05-02 18:12:11 basehttp "GET /vehicles/vehicle_search/?q=hertz HTTP/1.1" 500 140779 log_message 213
+ERROR 40 2025-05-02 18:12:32 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 151, in get_queryset
+    return Vehicle.objects.filter(Q(driver__icontains=query) | Q(department__department_name__icontains=query) | Q(vehicle__vendor_name__icontains=query) | Q(vehicle_type__icontains=query) | Q(plate_number__contains=query) | Q(po_number__contains=query))
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1481, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1499, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/query.py", line 1506, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1643, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1500, in build_filter
+    return self._add_q(
+           ~~~~~~~~~~~^
+        filter_expr,
+        ^^^^^^^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1675, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ~~~~~~~~~~~~~~~~~^
+        child,
+        ^^^^^^
+    ...<7 lines>...
+        update_join_types=update_join_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1523, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1330, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/db/models/sql/query.py", line 1802, in names_to_path
+    raise FieldError(
+    ...<2 lines>...
+    )
+django.core.exceptions.FieldError: Cannot resolve keyword 'vehicle' into field. Choices are: color, contract_number, daily_rate, department, department_id, driver, end_rental_date, id, make, misc_fees, model, monthly_rate, new_swapped, notes1, notes2, notes3, on_rental, plate_number, po_total, purchase_order, rental_status, start_rental_date, tax, title, vehicle_type, vendor, vendor_id, weekly_rate
+ERROR 40 2025-05-02 18:12:32 basehttp "GET /vehicles/vehicle_search/?q=hertz HTTP/1.1" 500 139869 log_message 213
+ERROR 40 2025-05-02 18:19:02 log Internal Server Error: /vehicles/vehicle_search/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/views/generic/list.py", line 158, in get
+    self.object_list = self.get_queryset()
+                       ~~~~~~~~~~~~~~~~~^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 199, in get_queryset
+    total_cost += rental.total_cost
+                  ^^^^^^^^^^^^^^^^^
+AttributeError: 'Vehicle' object has no attribute 'total_cost'
+ERROR 40 2025-05-02 18:19:02 basehttp "GET /vehicles/vehicle_search/?q=hertz HTTP/1.1" 500 77183 log_message 213
+ERROR 40 2025-05-02 19:07:30 log Internal Server Error: /vehicles/vehicle/2/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'vehicle_detail_txt' with no arguments not found. 1 pattern(s) tried: ['vehicles/vehicle_detail_txt/(?P<pk>[0-9]+)/\\Z']
+ERROR 40 2025-05-02 19:07:30 basehttp "GET /vehicles/vehicle/2/ HTTP/1.1" 500 156604 log_message 213
+ERROR 40 2025-05-02 19:10:35 log Internal Server Error: /vehicles/vehicle/2/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'vehicle_detail_txt' with no arguments not found. 1 pattern(s) tried: ['vehicles/vehicle_detail_txt/(?P<pk>[0-9]+)/\\Z']
+ERROR 40 2025-05-02 19:10:35 basehttp "GET /vehicles/vehicle/2/ HTTP/1.1" 500 156604 log_message 213
+ERROR 40 2025-05-02 19:11:07 log Internal Server Error: /vehicles/vehicle/2/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'vehicle_detail_pdf' with no arguments not found. 1 pattern(s) tried: ['vehicles/vehicle_detail_pdf/(?P<pk>[0-9]+)/\\Z']
+ERROR 40 2025-05-02 19:11:07 basehttp "GET /vehicles/vehicle/2/ HTTP/1.1" 500 156531 log_message 213
+ERROR 40 2025-05-02 19:16:33 log Internal Server Error: /vehicles/vehicle_detai_pdf/4/ log_response 248
+Traceback (most recent call last):
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/.venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/terencescott/1.PROG_FILES/Practice/April 2025/EQUIPMENT_RENTAL/vehicles/views.py", line 340, in vehicle_detail_pdf
+    lines.append(f'{vehicle.production}')
+                    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Vehicle' object has no attribute 'production'
+ERROR 40 2025-05-02 19:16:33 basehttp "GET /vehicles/vehicle_detai_pdf/4/ HTTP/1.1" 500 63419 log_message 213

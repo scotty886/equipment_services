@@ -27,7 +27,7 @@ urlpatterns = [
     path('rental_detail/<int:pk>/', views.RentalDetailView.as_view(), name='rental_detail'),
     path('rental_update/<int:pk>/', views.RentalUpdateView.as_view(), name='rental_update'),
     path('rental_delete/<int:pk>/', views.RentalDeleteView.as_view(), name='rental_delete'),
-    path('rental_detai_pdfl/<int:pk>/', views.rental_detail_pdf, name='rental_detail_pdf'),
+    path('rental_detai_pdf/<int:pk>/', views.rental_detail_pdf, name='rental_detail_pdf'),
     path('rental_detail_txt/<int:pk>/', views.rental_detail_txt, name='rental_detail_txt'),
     path('vendor_text', views.vendor_text, name='vendor_text'),
     path('vendor_csv', views.vendor_csv, name='vendor_csv'),
@@ -67,7 +67,4 @@ urlpatterns = [
     path('search_rentals/', views.SearchRentals.as_view(), name='search_rentals'),
     path('search_services/', views.SearchServices.as_view(), name='search_services'),
     path('search_vendors/', views.SearchVendors.as_view(), name='search_vendors'),
-
-
-
 ]

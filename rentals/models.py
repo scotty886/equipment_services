@@ -66,7 +66,7 @@ class Rental(models.Model):
     pick_up_location = models.CharField(max_length=300, null=True, blank=True)
     pick_up_time = models.TimeField(null=True, blank=True)
     # selection box
-    rental_type = models.CharField(max_length=100, choices=[('ROS', 'ROS'), ('Drop Load', 'Drop Load')], default='choose rental type')
+    rental_type = models.CharField(max_length=100, choices=[('ROS', 'ROS'), ('Drop Load', 'Drop Load'), ('n/a', 'n/a')], default='choose rental type')
     category = models.CharField(max_length=100, choices=[('main_equipment', 'main_equipment'), ('special_equipment', 'special_equipment'), ('office_equipment', 'office_equipment'), ('set_equipment', 'set_equipment'), ('misc_equipment', 'misc_equipment')], default='choose category')
     addl_tax_fees = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
     total_cost = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)

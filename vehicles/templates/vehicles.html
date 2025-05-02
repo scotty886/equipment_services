@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<style>
+    h2 {
+  color: white;
+}
+</style>
+<div class="container-fluid text-center">
+    <div class="bg"
+                       style="background-image:
+                            url('{% static 'media/techno4.jpg' %}');
+                            background-size: cover;
+                           background-position: center;
+                           height: 160vh;">
+        <br/>
+           <h1>VEHICLE RENTAL PAGE</h1>
+           <hr class="thick">
+           <br/><br/>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>This section is for tracking vehicle rentals</h2>
+                        <hr>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                     <div class="col-md-5">
+
+                     </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -472,11 +472,6 @@ def rental_detail_txt(request, pk):
     response.writelines(lines)
     return response
 
-
-
-
-
-
 # rental detail pdf
 def rental_detail_pdf(request, pk):
     """ PDF view of rental detail """
@@ -1423,6 +1418,7 @@ class SearchRentals(ListView):
             self.extra_context = {'total_cost': total_cost}
 
         return queryset
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search_query'] = self.request.GET.get('q', '')
