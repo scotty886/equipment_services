@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid">
+        <h1>UPDTE USER PAGE</h1>
+        <hr class="thick">
+        <br/><br/>
+
+     <center>
+         <div class="row">
+             <div class="col-md-5"></div>
+                <div class="col-md-3">
+                    <div class="card text-bg-dark text-center">
+                        <div class="card-header">
+                            Please enter your username and password
+                        </div>
+
+                        <div class="card-body">
+                            <form method="POST" action="{% url 'update_user' %}">
+                                {% csrf_token %}
+
+                                {{user_form.as_p}}
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+         </div>
+     </center>
+</div>
+
+{% endblock %}

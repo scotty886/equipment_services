@@ -1,0 +1,4 @@
+
+web: gunicorn equipment.wsgi --log-file
+web: python manage.py && gunicorn equipment.wsgi
+

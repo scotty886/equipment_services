@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+        <h1>VENDOR DETAILS</h1>
+        <hr class="thick">
+        <br/><br/>
+
+     <center>
+         <div class="row">
+             <div class="col-md-3"></div>
+                <div class="col-md-7">
+                    <div class="card text-bg-dark text-center border-light">
+                        <div class="card-header">
+                            <h3><b>{{vendor.name}}</b></h3>
+                            <hr>
+                        </div>
+
+                        <div class="card-body">
+                            <h5>Services:  <b>{{vendor.services}}</b></h5>
+                            <h5>Address:  <b>{{vendor.address}}</b></h5>
+                            <h5>Contact:  <b></b>{{vendor.contact}}</h5>
+                            <h5>Phone:  <b></b>{{vendor.phone}}</h5>
+                             <h5>Email: <input type="text" id="link-input" value="{{vendor.email}}"> <button  class='btn btn-secondary' id="copy-button">Copy</button></h5>
+                            <h5>Agreement Signed?  <b>{{vendor.agreement_signed}}</b></h5>
+                            <h5>Agreement Date:  <b>{{vendor.agreement_date}}</b></h5>
+                            <h5>COI Issued?  <b>{{vendor.COI_issued}}</b></h5>
+                            <hr>
+                            <h5>Notes:  <b>{{vendor.notes}}</b></h5>
+
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'vendor_update' vendor.id %}" class="btn btn-outline-light">Update</a>
+                             <a href="{% url 'vendor_delete' vendor.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+         </div>
+     </center>
+</div>
+<br/><br/>
+
+<script>
+    document.getElementById("copy-button").addEventListener("click", function() {
+      document.getElementById("link-input").select();
+      document.execCommand("copy"); // For older browsers
+      navigator.clipboard.writeText(document.getElementById("link-input").value).then(
+        () => {
+          console.log('Copied!'); // Optional: show a success message
+        },
+        (err) => {
+          console.error('Failed to copy: ', err); // Handle errors
+        }
+      );
+    });
+</script>
+
+{% endblock %}

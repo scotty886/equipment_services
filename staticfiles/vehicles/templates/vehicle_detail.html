@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/hr.css' %}">
+<div class="container-fluid text-center">
+        <h1>VEHICLE DETAILS</h1>
+        <hr class="thick">
+        <br/><br/>
+
+     <center>
+         <div class="row">
+             <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card text-bg-dark text-center border-light">
+                        <div class="card-header">
+                            <h3><b>{{vehicle.production}}</b></h3>
+                            <hr>
+                        </div>
+
+                        <div class="card-body">
+                            <h5>Driver:  <b>{{vehicle.driver}}</b></h5>
+                            <h5>Title:  <b>{{vehicle.title}}</b></h5>
+                            <h5>Department:  <b>{{vehicle.department}}</b></h5>
+                            <h5>Vendor:  <a href="{% url 'vendor_detail' vehicle.vendor.id %}" class="btn btn-outline-light"><b>{{vehicle.vendor.name}}</b></a></h5>
+                            <h5>Vehicle Type:  <b>{{vehicle.vehicle_type}}</b></h5>
+                            <h5>Plate Number:  <b>{{vehicle.plate_number}}</b></h5>
+                            <h5>Make: <b>{{vehicle.make}}</b></h5>
+                            <h5>Model: <b>{{vehicle.model}}</b></h5>
+                            <h5>Color: <b>{{vehicle.color}}</b></h5>
+                            <h5>Start Rental:  <b>{{vehicle.start_rental_date}}</b></h5>
+                            <h5>End Rental:  <b>{{vehicle.end_rental_date}}</b></h5>
+                            <h5>Rental Days: <b>{{vehicle.rental_duration}}</b></h5>
+                            <h5>Contract Number:  <b>{{vehicle.contract_number}}</b></h5>
+                            <h5>Purchase Order: <b>{{vehicle.purchase_order}}</b></h5>
+                            <h5>Daily Rate: <b>${{vehicle.daily_rate}}</b></h5>
+                            <h5>Weekly Rate: <b>${{vehicle.weekly_rate}}</b></h5>
+                            <h5>Monthly Rate: <b>${{vehicle.monthly_rate}}</b></h5>
+                            <h5>Tax: <b>${{vehicle.tax}}</b></h5>
+                            <h5>Misc Fees: <b>${{vehicle.misc_fees}}</b></h5>
+                            <h5>Total: <b>${{vehicle.po_total|intcomma}}</b></h5>
+                            <h5>Rental Status: <b>{{vehicle.rental_status}}</b></h5>
+                            <br/>
+                            <hr class="thick">
+                            <h5><b>NOTES SECTION</b></h5>
+                            <br/>
+                            <h6>Note 1:  <b>{{vehicle.notes1}}</b></h6>
+                            <hr>
+                            <h6>Note 2:  <b>{{vehicle.notes2}}</b></h6>
+                            <hr>
+                            <h6>Note 3:  <b>{{vehicle.notes3}}</b></h6>
+                            <hr>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{% url 'vehicle_update' vehicle.id %}"class="btn btn-outline-light">Update</a>
+                            <a href="{% url 'vehicle_delete' vehicle.id %}" class="btn btn-danger">Delete</a>
+                        </div>
+                        <br/>
+                    </div>
+                    <div class="col-md-3"></div>
+
+                    <div class="container">
+                      <div class="card bg-dark text-white">
+                          <div class="card-header">
+                            <b>PRINT OUT REPORT</b>
+                          </div>
+                          <div class="card-body">
+                            <a href="{% url 'vehicle_detail_txt' vehicle.id %}" class="btn btn-secondary">Print to Text</a>&nbsp;&nbsp;
+                              <a href="{% url 'vehicle_detail_pdf' vehicle.id %}" class="btn btn-success">Print to PDF</a>
+                          </div>
+                      </div>
+                    </div>
+
+                </div>
+         </div>
+     </center>
+</div>
+<br/><br/>
+
+{% endblock %}
