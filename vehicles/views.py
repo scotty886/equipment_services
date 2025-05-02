@@ -26,23 +26,20 @@ from django.views.generic import (TemplateView, FormView,
                                   ListView, DetailView, CreateView, UpdateView, DeleteView)
 from rentals.forms import SignUpForm, UpdateUserForm, PasswordChangeForm
 
-import logging
+
 from rentals.models import Production, Vendor, Department, Rental, Service, VendorCategory
 from rentals.mixins import RentalListMixin
 
 from .models import Vehicle
 
-logger = logging.getLogger(__name__)
 
 # Create your views here.
 
 # Vehicles home view
 def vehicles(request):
-    logger.error("Vehicles home view")
     return render(request, 'vehicles.html')
 
 def vehicle_list(request):
-    logger.error("Vehicle list view")
     vehicles = Vehicle.objects.all().order_by('start_rental_date')
     # rental duration
 
@@ -54,7 +51,6 @@ def vehicle_list(request):
 
 # vehicle detail view
 class VehicleDetailView(DetailView):
-    logger.error("Vehicle detail view")
     """Vehicle detail view. This is for the admin to view vehicle details."""
     model = Vehicle
     template_name = 'vehicle_detail.html'
@@ -66,7 +62,6 @@ class VehicleDetailView(DetailView):
 
 # vehicle create view
 class VehicleCreateView(CreateView):
-    logger.error("Vehicle create view")
     """Vehicle create view. This is for the admin to create a new vehicle."""
     model = Vehicle
     template_name = 'vehicle_form.html'
@@ -75,7 +70,6 @@ class VehicleCreateView(CreateView):
     success_url = reverse_lazy('vehicle_list')
 
     def form_valid(self, form):
-        logger.error("Vehicle form is valid")
         start_rental_date = form.cleaned_data.get('start_rental_date')
         end_rental_date = form.cleaned_data.get('end_rental_date')
 
@@ -98,7 +92,6 @@ class VehicleCreateView(CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Vehicle form is invalid")
         messages.error(self.request, "Vehicle information failed to save.")
         return super().form_invalid(form)
 
@@ -115,7 +108,6 @@ class VehicleCreateView(CreateView):
 # vehicle update view
 class VehicleUpdateView(UpdateView):
     """Vehicle update view. This is for the admin to update vehicle details."""
-    logger.error("Vehicle update view")
     model = Vehicle
     template_name = 'vehicle_form.html'
     fields = ['production', 'driver', 'title', 'department', 'vendor', 'vehicle_type', 'plate_number', 'make', 'model', 'color', 'start_rental_date', 'end_rental_date', 'contract_number', 'purchase_order', 'daily_rate', 'weekly_rate', 'monthly_rate', 'tax', 'misc_fees', 'po_total']
@@ -126,7 +118,6 @@ class VehicleUpdateView(UpdateView):
 # vehicle delete view
 class VehicleDeleteView(DeleteView):
     """Vehicle delete view. This is for the admin to delete vehicle details."""
-    logger.error("Vehicle delete view")
     model = Vehicle
     template_name = 'vehicle_delete.html'
     context_object_name = 'vehicle'
@@ -139,17 +130,14 @@ class VehicleDeleteView(DeleteView):
 # vehicle search view
 class VehicleSearchView(ListView):
     """Vehicle search view. This is for the admin to search for vehicle details."""
-    logger.error("Vehicle search view")
     model = Vehicle
     template_name = 'vehicle_search.html'
     context_object_name = 'vehicles'
 
     def get_queryset(self):
-        logger.error("Vehicle search view get_queryset")
         queryset = super().get_queryset()
         query = self.request.GET.get('q')
         if query:
-            logger.error("Vehicle search view get_queryset query")
             queryset = queryset.filter(
                 Q(driver__icontains=query) |
                 Q(department__department_name__icontains=query) |

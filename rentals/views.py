@@ -32,19 +32,18 @@ from django.views.generic import (TemplateView, FormView,
                                   ListView, DetailView, CreateView, UpdateView, DeleteView)
 from .forms import SignUpForm, UpdateUserForm, PasswordChangeForm
 
-import logging
+#import logging
 from .models import Production, Vendor, Department, Rental, Service, VendorCategory
 from .mixins import RentalListMixin
 
 # Create your views here.
 
-logger = logging.getLogger(__name__)
+#logger = logging.getLogger(__name__)
 
 
 def home(request):
     """ Home page view.
      Homepage will give a general description of the application."""
-    logger.error("Home page accessed")
     return render(request, 'home.html')
 
 
@@ -59,23 +58,19 @@ def about(request):
 def login_user(request):
     """ Login page view.
      Login page will allow users to login to the application using their username and password."""
-    logger.error("Login page accessed")
+    #logger.error("Login page accessed")
     if request.method == 'POST':
-        logger.error("Login form submitted")
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            logger.error("User authenticated successfully")
             login(request, user)
             messages.success(request, "you have been logged in successfully.")
             return redirect('home')
         else:
-            logger.error("Invalid login attempt")
             messages.error(request, "Invalid username or password.")
             return redirect('login_user')
     else:
-        logger.error("Invalid request method")
         messages.error(request, "Invalid request method.")
         return render(request, 'login_user.html')
 
@@ -90,7 +85,6 @@ def logout_user(request):
 def register_user(request):
     """ Registration page view. This is for new users to create an account.
     """
-    logger.error("Registration page accessed")
     form = SignUpForm()
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -100,15 +94,12 @@ def register_user(request):
             password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
-            logger.error("Registration form is valid")
             messages.success(request, "Registration successful.")
             return redirect('home')
         else:
-            logger.error("Registration form is not valid")
             messages.error(request, "Registration failed. Please check the form.")
             return redirect('register_user')
     else:
-        logger.error("Invalid request method")
         messages.error(request, "Invalid request method.")
         context = {'form': form}
         return render(request, 'register_user.html', context)
@@ -116,14 +107,11 @@ def register_user(request):
 # user update view
 def update_user(request):
     """ Update user page view. This is for users to update their profile information."""
-    logger.error("Update user page view accessed")
     if request.user.is_authenticated:
-        logger.error("User is authenticated")
         current_user = User.objects.get(id=request.user.id)
         user_form = UpdateUserForm(request.POST or None, instance=current_user)
 
         if user_form.is_valid():
-            logger.error("User form is valid")
             user_form.save()
 
             login(request, current_user)
@@ -131,37 +119,29 @@ def update_user(request):
             return redirect('home')
         return render(request, 'update_user.html', {'user_form': user_form})
     else:
-        logger.error("User is not authenticated")
         messages.error(request, 'You need to be logged in to update your profile.')
         return redirect('home')
 
 # user password update view
 def update_password(request):
     """ Update password page view. This is for users to update their password."""
-    logger.error("Update password page view accessed")
     if request.user.is_authenticated:
-        logger.error("User is authenticated")
         current_user = request.user
         if request.method == 'POST':
-            logger.error("Password change form submitted")
             form = PasswordChangeForm(current_user, request.POST)
             if form.is_valid():
                 form.save()
-                logger.error("Password updated successfully")
                 messages.success(request, 'Password updated successfully.')
                 login(request, current_user)
                 return redirect('update_user')
             else:
-                logger.error("Password update form is not valid")
                 messages.error(request, 'Password update failed. Please try again.')
                 return redirect('update_password')
         else:
-            logger.error("GET request for password update")
             form = PasswordChangeForm(current_user)
             context = {'form': form}
             return render(request, 'update_password.html', context)
     else:
-        logger.error("User is not authenticated")
         messages.error(request, 'You need to be logged in to update your password.')
         return redirect('home')
 
@@ -177,7 +157,6 @@ def user_list(request):
 
 class ProductionInfoFormView(CreateView):
     """ Production information form view. This is for the admin to enter production information."""
-    logger.error("ProductionInfoFormView initialized")
     model = Production
     template_name = 'production_form.html'
     fields = ['production_company', 'show_name']
@@ -185,12 +164,10 @@ class ProductionInfoFormView(CreateView):
     success_url = reverse_lazy('home')
     # show success message
     def form_valid(self, form):
-        logger.error("Production form is valid")
         messages.success(self.request, "Production information saved successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Production form is invalid")
         messages.error(self.request, "Production information failed to save.")
         return super().form_invalid(form)
 
@@ -206,7 +183,6 @@ def vendor_list(request):
 # Vendor detail view
 class VendorDetailView(DetailView):
     """ Vendor detail view. This is for the admin to view vendor details. """
-    logger.error("VendorDetailView initialized")
     model = Vendor
     template_name = 'vendor_detail.html'
     context_object_name = 'vendor'
@@ -217,7 +193,6 @@ class VendorDetailView(DetailView):
 # Vendor update view
 class VendorUpdateView(UpdateView):
     """ Vendor update view. This is for the admin to update vendor information."""
-    logger.error("VendorUpdateView initialized")
     model = Vendor
     template_name = 'vendor_update.html'
     fields = ['name', 'services', 'category', 'address', 'contact', 'phone', 'email', 'agreement_signed', 'agreement_date', 'COI_issued', 'notes']
@@ -225,12 +200,10 @@ class VendorUpdateView(UpdateView):
     success_url = reverse_lazy('vendor_list')
 
     def form_valid(self, form):
-        logger.error("Vendor form is valid")
         messages.success(self.request, "Vendor information updated successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Vendor form is invalid")
         messages.error(self.request, "Vendor information failed to update.")
         return super().form_invalid(form)
 
@@ -238,21 +211,18 @@ class VendorUpdateView(UpdateView):
 # Vendor delete view
 class VendorDeleteView(DeleteView):
     """ Vendor delete view. This is for the admin to delete vendor information."""
-    logger.error("VendorDeleteView initialized")
     model = Vendor
     template_name = 'vendor_delete.html'
     context_object_name = 'vendor'
     success_url = reverse_lazy('vendor_list')
 
     def delete(self, request, *args, **kwargs):
-        logger.error("Vendor deleted successfully")
         messages.success(request, "Vendor deleted successfully.")
         return super().delete(request, *args, **kwargs)
 
 # vendor form view
 class VendorFormView(CreateView):
     """ Vendor information form view. This is for the admin to enter vendor information."""
-    logger.error("VendorFormView initialized")
     model = Vendor
     template_name = 'vendor_form.html'
     fields = ['name', 'services', 'category', 'address', 'contact', 'phone', 'email', 'agreement_signed', 'agreement_date', 'COI_issued', 'notes']
@@ -260,19 +230,16 @@ class VendorFormView(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        logger.error("Vendor form is valid")
         messages.success(self.request, "Vendor information saved successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Vendor form is invalid")
         messages.error(self.request, "Vendor information failed to save.")
         return super().form_invalid(form)
 
 
 class VendorCategoryFormView(CreateView):
     """ Vendor category information form view. This is for the admin to enter vendor category information."""
-    logger.error("VendorCategoryFormView initialized")
     model = VendorCategory
     template_name = 'vendor_category_form.html'
     fields = ['name']
@@ -280,12 +247,10 @@ class VendorCategoryFormView(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        logger.error("Vendor category form is valid")
         messages.success(self.request, "Vendor category information saved successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Vendor category form is invalid")
         messages.error(self.request, "Vendor category information failed to save.")
         return super().form_invalid(form)
 
@@ -379,7 +344,6 @@ def vendor_pdf(request):
 # department form view
 class DepartmentFormView(CreateView):
     """ Department information form view. This is for the admin to enter department information."""
-    logger.error("DepartmentFormView initialized")
     model = Department
     template_name = 'department_form.html'
     fields = ['department_name']
@@ -387,12 +351,10 @@ class DepartmentFormView(CreateView):
     success_url = reverse_lazy('home')
 
     def form_valid(self, form):
-        logger.error("Department form is valid")
         messages.success(self.request, "Department information saved successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Department form is invalid")
         messages.error(self.request, "Department information failed to save.")
         return super().form_invalid(form)
 
@@ -405,7 +367,6 @@ class DepartmentFormView(CreateView):
 # rentals list view
 class RentalListView(ListView):
     """ Rental list view. This is for the admin to view all rentals."""
-    logger.error("RentalListView initialized")
     model = Rental
     template_name = 'rental_list.html'
     context_object_name = 'rentals'
@@ -413,13 +374,11 @@ class RentalListView(ListView):
     ordering = ['rental_item']
 
     def get_queryset(self):
-        logger.error("Rental list queried")
         return Rental.objects.all()
 
 # rentals update view
 class RentalUpdateView(UpdateView):
     """ Rental update view. This is for the admin to update rental information."""
-    logger.error("RentalUpdateView initialized")
     model = Rental
     template_name = 'rental_update.html'
     fields = ['rental_item', 'first_name', 'last_name', 'title', 'department', 'production', 'vendor', 'scene_info',
@@ -430,33 +389,28 @@ class RentalUpdateView(UpdateView):
     success_url = reverse_lazy('rental_list')
 
     def form_valid(self, form):
-        logger.error("Rental form is valid")
         messages.success(self.request, "Rental information updated successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Rental form is invalid")
         messages.error(self.request, "Rental information failed to update.")
         return super().form_invalid(form)
 
 # rentals delete view
 class RentalDeleteView(DeleteView):
     """ Rental delete view. This is for the admin to delete rental information."""
-    logger.error("RentalDeleteView initialized")
     model = Rental
     template_name = 'rental_delete.html'
     context_object_name = 'rental'
     success_url = reverse_lazy('rental_list')
 
     def delete(self, request, *args, **kwargs):
-        logger.error("Rental deleted successfully")
         messages.success(request, "Rental deleted successfully.")
         return super().delete(request, *args, **kwargs)
 
 # rentals details view
 class RentalDetailView(DetailView):
     """ Rental detail view. This is for the admin to view rental details. """
-    logger.error("RentalDetailView initialized")
     model = Rental
     template_name = 'rental_detail.html'
     context_object_name = 'rental'
@@ -530,7 +484,6 @@ def rental_detail_pdf(request, pk):
 # rentals form view
 class RentalFormView(CreateView):
     """ Rental information form view. This is for the admin to enter rental information."""
-    logger.error("RentalFormView initialized")
     model = Rental
     template_name = 'rental_form.html'
     fields = ['rental_item', 'first_name', 'last_name', 'title', 'department', 'production', 'vendor', 'scene_info', 'start_rental_date', 'end_rental_date', 'drop_off_location', 'drop_off_time', 'pick_up_location', 'pick_up_time', 'rental_type', 'category', 'addl_tax_fees', 'total_cost', 'purchase_order', 'quote_number', 'payment_type', 'notes1', 'notes2', 'notes3']
@@ -538,7 +491,6 @@ class RentalFormView(CreateView):
     success_url = reverse_lazy('rental_list')
 
     def form_valid(self, form):
-        logger.error("Rental form is valid")
         start_rental_date = form.cleaned_data.get('start_rental_date')
         end_rental_date = form.cleaned_data.get('end_rental_date')
 
@@ -561,7 +513,6 @@ class RentalFormView(CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Rental form is invalid")
         messages.error(self.request, "Rental information failed to save.")
         return super().form_invalid(form)
 
