@@ -1003,7 +1003,7 @@ def office_equipment_csv(request):
         ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info',
          'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location',
          'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
-         'Quote Number', 'Notes 1', 'Notes 2', 'Notes 3'])
+         'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
@@ -1011,8 +1011,7 @@ def office_equipment_csv(request):
                          rental.production, rental.vendor, rental.scene_info, rental.start_rental_date,
                          rental.end_rental_date, rental.drop_off_location, rental.drop_off_time,
                          rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number,
-                         rental.notes1, rental.notes2, rental.notes3])
+                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number])
 
     return response
 
@@ -1139,7 +1138,7 @@ def service_list_csv(request):
     # Loop through the rentals and write to the csv file
     for service in services:
         writer.writerow([service.service, service.description, service.rate, service.total, service.start_service_date,
-                         service.end_service_date, service.vendor, service.service_location, service.requestor,
+                         service.end_service_date, service.vendor.name, service.service_location, service.requestor,
                          service.title, service.production, service.department, service.purchase_order,
                          service.payment_type])
 
