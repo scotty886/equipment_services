@@ -278,11 +278,11 @@ def vendor_csv(request):
     vendors = Vendor.objects.all()
 
     # Add colum headings to the csv file
-    writer.writerow(['Vendor Name', 'Services', 'Address', 'Contact', 'Phone', 'Email', 'Agreement Signed', 'Agreement Date', 'COI Issued', 'Notes'])
+    writer.writerow(['Vendor Name', 'Services', 'Address', 'Contact', 'Phone', 'Email', 'Notes'])
 
     # Loop through the vendors and write to the csv file
     for vendor in vendors:
-        writer.writerow([vendor.name, vendor.services, vendor.address, vendor.contact, vendor.phone, vendor.email, vendor.agreement_signed, vendor.agreement_date, vendor.COI_issued, vendor.notes])
+            writer.writerow([vendor.name, vendor.services, vendor.address, vendor.contact, vendor.phone, vendor.email, vendor.notes])
 
     return response
 
@@ -1133,16 +1133,15 @@ def service_list_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Service', 'Description', 'Rate', 'Total', 'Start Service Date', 'End Service Date', 'Vendor', 'Service Location',
-         'Requestor', 'Title', 'Production', 'Department', 'Purchase Order', 'Payment Type', 'Notes 1', 'Notes 2',
-         'Notes 3'])
+        ['Service', 'Description', 'Rate', 'Total', 'Start Date', 'End Date', 'Vendor', 'Service Location',
+         'Requestor', 'Title', 'Production', 'Department', 'Purchase Order', 'Payment Type'])
 
     # Loop through the rentals and write to the csv file
     for service in services:
         writer.writerow([service.service, service.description, service.rate, service.total, service.start_service_date,
                          service.end_service_date, service.vendor, service.service_location, service.requestor,
                          service.title, service.production, service.department, service.purchase_order,
-                         service.payment_type, service.notes1, service.notes2, service.notes3])
+                         service.payment_type])
 
     return response
 
