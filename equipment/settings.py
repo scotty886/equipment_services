@@ -32,9 +32,9 @@ SECRET_KEY = os.environ['SECRET_KEY_TS']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['equipmentservices-production.up.railway.app', 'https://equipmentservices-production.up.railway.app']
+ALLOWED_HOSTS = ['film3rentals.com', 'https://film3rentals.com', 'equipmentservices-production.up.railway.app', 'https://equipmentservices-production.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['https://equipmentservices-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://equipmentservices-production.up.railway.app', 'https://film3rentals.com']
 
 
 # Application definition
