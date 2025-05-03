@@ -83,10 +83,6 @@ class VehicleCreateView(CreateView):
             form.add_error('start_rental_date', "Start rental date must be before end rental date.")
             return self.form_invalid(form)
 
-        # start day cannot be in the past
-        if start_rental_date < timezone.now().date():
-            form.add_error('start_rental_date', "Start rental date cannot be in the past.")
-            return self.form_invalid(form)
 
         messages.success(self.request, "Vehicle information saved successfully.")
         return super().form_valid(form)
