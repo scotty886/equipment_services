@@ -1192,7 +1192,6 @@ def service_list_pdf(request):
 # Service form
 class ServiceFormView(CreateView):
     """ Rental information form view. This is for the admin to enter rental information."""
-    logger.error("ServiceFormView initialized")
     model = Service
     template_name = 'service_form.html'
     fields = ['service', 'description', 'rate', 'total', 'start_service_date', 'end_service_date', 'vendor', 'service_location', 'requestor', 'title', 'production', 'department', 'purchase_order', 'payment_type', 'notes1', 'notes2', 'notes3',]
@@ -1200,7 +1199,6 @@ class ServiceFormView(CreateView):
     success_url = reverse_lazy('service_form')
 
     def form_valid(self, form):
-        logger.error("Service form is valid")
         start_service_date = form.cleaned_data.get('start_service_date')
         end_service_date = form.cleaned_data.get('end_service_date')
 
@@ -1295,7 +1293,6 @@ def service_detail_pdf(request, pk):
 # Vendor update view
 class ServiceUpdateView(UpdateView):
     """ Vendor update view. This is for the admin to update vendor information."""
-    logger.error("ServiceUpdateView initialized")
     model = Service
     template_name = 'service_update.html'
     fields = ['service', 'description', 'rate', 'total', 'start_service_date', 'end_service_date', 'vendor',
