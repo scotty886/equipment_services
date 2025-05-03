@@ -1223,14 +1223,12 @@ class ServiceFormView(CreateView):
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Service form is invalid")
         messages.error(self.request, "Service information failed to save.")
         return super().form_invalid(form)
 
 # Service detail view
 class ServiceDetailView(DetailView):
     """Service detail view. This is for the admin to view service details."""
-    logger.error("ServiceDetailView initialized")
     model = Service
     template_name = 'service_detail.html'
     context_object_name = 'service'
@@ -1306,12 +1304,10 @@ class ServiceUpdateView(UpdateView):
     success_url = reverse_lazy('service_list')
 
     def form_valid(self, form):
-        logger.error("Service form is valid")
         messages.success(self.request, "Service information updated successfully.")
         return super().form_valid(form)
 
     def form_invalid(self, form):
-        logger.error("Service form is invalid")
         messages.error(self.request, "Service information failed to update.")
         return super().form_invalid(form)
 
@@ -1319,14 +1315,12 @@ class ServiceUpdateView(UpdateView):
 # Vendor delete view
 class ServiceDeleteView(DeleteView):
     """ Vendor delete view. This is for the admin to delete vendor information."""
-    logger.error("ServiceDeleteView initialized")
     model = Service
     template_name = 'service_delete.html'
     context_object_name = 'service'
     success_url = reverse_lazy('service_list')
 
     def delete(self, request, *args, **kwargs):
-        logger.error("Service deleted successfully")
         messages.success(request, "Service deleted successfully.")
         return super().delete(request, *args, **kwargs)
 
