@@ -881,7 +881,7 @@ def set_equipment_csv(request):
     writer.writerow(
         ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Scene Info',
          'Start Rental', 'End Rental',
-         'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
+         'Rental Type', 'Category', 'Total Cost', 'Purchase Order',
          'Quote Number'])
 
     # Loop through the rentals and write to the csv file
@@ -890,7 +890,7 @@ def set_equipment_csv(request):
                          rental.vendor.name, rental.scene_info, rental.start_rental_date,
                          rental.end_rental_date,
                          rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number
+                         rental.total_cost, rental.purchase_order, rental.quote_number
                          ])
 
     return response
