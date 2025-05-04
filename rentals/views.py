@@ -546,11 +546,11 @@ def rental_csv(request):
     rentals = Rental.objects.all()
 
     # Add colum headings to the csv file
-    writer.writerow(['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info', 'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location', 'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order', 'Quote Number', 'Notes 1', 'Notes 2', 'Notes 3'])
+    writer.writerow(['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Purpose', 'Start Rental', 'End Rental', 'Rental Type', 'Category', 'Total Cost', 'Purchase Order', 'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
-        writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department, rental.production, rental.vendor, rental.scene_info, rental.start_rental_date, rental.end_rental_date, rental.drop_off_location, rental.drop_off_time, rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category, rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number, rental.notes1, rental.notes2, rental.notes3])
+        writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department, rental.vendor.name, rental.scene_info, rental.start_rental_date, rental.end_rental_date, rental.rental_type, rental.category, rental.total_cost, rental.purchase_order, rental.quote_number])
 
     return response
 
@@ -652,19 +652,18 @@ def main_equipment_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info',
-         'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location',
-         'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
-         'Quote Number', 'Notes 1', 'Notes 2', 'Notes 3'])
+        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Purpose',
+         'Start Rental', 'End Rental',
+         'Rental Type', 'Category', 'Total Cost', 'Purchase Order',
+         'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
         writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department,
-                         rental.production, rental.vendor, rental.scene_info, rental.start_rental_date,
-                         rental.end_rental_date, rental.drop_off_location, rental.drop_off_time,
-                         rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number,
-                         rental.notes1, rental.notes2, rental.notes3])
+                         rental.vendor.name, rental.scene_info, rental.start_rental_date,
+                         rental.end_rental_date, rental.rental_type, rental.category,
+                         rental.total_cost, rental.purchase_order, rental.quote_number,
+                         ])
 
     return response
 
@@ -767,19 +766,18 @@ def special_equipment_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info',
-         'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location',
-         'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
-         'Quote Number', 'Notes 1', 'Notes 2', 'Notes 3'])
+        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Purpose',
+         'Start Rental', 'End Rental',
+         'Rental Type', 'Category', 'Total Cost', 'Purchase Order',
+         'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
         writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department,
-                         rental.production, rental.vendor, rental.scene_info, rental.start_rental_date,
-                         rental.end_rental_date, rental.drop_off_location, rental.drop_off_time,
-                         rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number,
-                         rental.notes1, rental.notes2, rental.notes3])
+                         rental.vendor.name, rental.scene_info, rental.start_rental_date,
+                         rental.end_rental_date,
+                         rental.rental_type, rental.category,
+                         rental.total_cost, rental.purchase_order, rental.quote_number])
 
     return response
 
@@ -881,19 +879,19 @@ def set_equipment_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info',
-         'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location',
-         'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
-         'Quote Number', 'Notes 1', 'Notes 2', 'Notes 3'])
+        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Scene Info',
+         'Start Rental', 'End Rental',
+         'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
+         'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
         writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department,
-                         rental.production, rental.vendor, rental.scene_info, rental.start_rental_date,
-                         rental.end_rental_date, rental.drop_off_location, rental.drop_off_time,
-                         rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number,
-                         rental.notes1, rental.notes2, rental.notes3])
+                         rental.vendor.name, rental.scene_info, rental.start_rental_date,
+                         rental.end_rental_date,
+                         rental.rental_type, rental.category,
+                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number
+                         ])
 
     return response
 
@@ -995,18 +993,18 @@ def office_equipment_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Production', 'Vendor', 'Scene Info',
-         'Start Rental Date', 'End Rental Date', 'Drop Off Location', 'Drop Off Time', 'Pick Up Location',
-         'Pick Up Time', 'Rental Type', 'Category', 'Additional Tax Fees', 'Total Cost', 'Purchase Order',
+        ['Rental Item', 'First Name', 'Last Name', 'Title', 'Department', 'Vendor', 'Purpose',
+         'Start Rental', 'End Rental',
+         'Rental Type', 'Category','Total Cost', 'Purchase Order',
          'Quote Number'])
 
     # Loop through the rentals and write to the csv file
     for rental in rentals:
         writer.writerow([rental.rental_item, rental.first_name, rental.last_name, rental.title, rental.department,
-                         rental.production, rental.vendor, rental.scene_info, rental.start_rental_date,
-                         rental.end_rental_date, rental.drop_off_location, rental.drop_off_time,
-                         rental.pick_up_location, rental.pick_up_time, rental.rental_type, rental.category,
-                         rental.addl_tax_fees, rental.total_cost, rental.purchase_order, rental.quote_number])
+                         rental.vendor.name, rental.scene_info, rental.start_rental_date,
+                         rental.end_rental_date,
+                        rental.rental_type, rental.category,
+                         rental.total_cost, rental.purchase_order, rental.quote_number])
 
     return response
 
@@ -1127,14 +1125,14 @@ def service_list_csv(request):
 
     # Add colum headings to the csv file
     writer.writerow(
-        ['Service', 'Description', 'Rate', 'Total', 'Start Date', 'End Date', 'Vendor', 'Service Location',
-         'Requestor', 'Title', 'Production', 'Department', 'Purchase Order', 'Payment Type'])
+        ['Service', 'Description', 'Total', 'Start Date', 'End Date', 'Vendor', 'Service Location',
+         'Requestor', 'Title', 'Department', 'Purchase Order', 'Payment Type'])
 
     # Loop through the rentals and write to the csv file
     for service in services:
-        writer.writerow([service.service, service.description, service.rate, service.total, service.start_service_date,
+        writer.writerow([service.service, service.description, service.total, service.start_service_date,
                          service.end_service_date, service.vendor.name, service.service_location, service.requestor,
-                         service.title, service.production, service.department, service.purchase_order,
+                         service.title, service.department, service.purchase_order,
                          service.payment_type])
 
     return response
