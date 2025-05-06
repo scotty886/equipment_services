@@ -490,36 +490,36 @@ class RentalFormView(CreateView):
     context_object_name = 'form'
     success_url = reverse_lazy('rental_list')
 
-    # def form_valid(self, form):
-    #     start_rental_date = form.cleaned_data.get('start_rental_date')
-    #     end_rental_date = form.cleaned_data.get('end_rental_date')
-    #
-    #     # end rental date must be after start date
-    #     if end_rental_date < start_rental_date:
-    #         form.add_error('end_rental_date', "End rental date must be after start rental date.")
-    #         return self.form_invalid(form)
-    #
-    #     # start date must be before end date
-    #     if start_rental_date > end_rental_date:
-    #         form.add_error('start_rental_date', "Start rental date must be before end rental date.")
-    #         return self.form_invalid(form)
-    #
-    #     messages.success(self.request, "Rental information saved successfully.")
-    #     return super().form_valid(form)
-    #
-    # def form_invalid(self, form):
-    #     messages.error(self.request, "Rental information failed to save.")
-    #     return super().form_invalid(form)
-    #
-    # # form datetime validation
-    # def clean(self):
-    #     cleaned_data = super().clean()
-    #     start_rental_date = cleaned_data.get('start_rental_date')
-    #     end_rental_date = cleaned_data.get('end_rental_date')
-    #
-    #     if start_rental_date and end_rental_date and start_rental_date > end_rental_date:
-    #         raise forms.ValidationError("End rental date must be after start rental date.")
-    #     return cleaned_data
+    def form_valid(self, form):
+         start_rental_date = form.cleaned_data.get('start_rental_date')
+         end_rental_date = form.cleaned_data.get('end_rental_date')
+
+         # end rental date must be after start date
+         if end_rental_date < start_rental_date:
+             form.add_error('end_rental_date', "End rental date must be after start rental date.")
+             return self.form_invalid(form)
+
+         # start date must be before end date
+         if start_rental_date > end_rental_date:
+             form.add_error('start_rental_date', "Start rental date must be before end rental date.")
+             return self.form_invalid(form)
+
+         messages.success(self.request, "Rental information saved successfully.")
+         return super().form_valid(form)
+
+     def form_invalid(self, form):
+         messages.error(self.request, "Rental information failed to save.")
+         return super().form_invalid(form)
+
+     # form datetime validation
+     def clean(self):
+         cleaned_data = super().clean()
+         start_rental_date = cleaned_data.get('start_rental_date')
+         end_rental_date = cleaned_data.get('end_rental_date')
+
+         if start_rental_date and end_rental_date and start_rental_date > end_rental_date:
+             raise forms.ValidationError("End rental date must be after start rental date.")
+         return cleaned_data
 
 # rental equipment print txt report
 def rental_txt(request):

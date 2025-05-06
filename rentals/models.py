@@ -146,8 +146,6 @@ class Rental(models.Model):
                 raise ValidationError("Start date cannot be after end date.")
         if self.start_rental_date < datetime.date.today():
             raise ValidationError("Start date cannot be in the past.")
-        if self.end_rental_date < datetime.date.today():
-            raise ValidationError("End date cannot be in the past.")
 
 
 
