@@ -507,12 +507,12 @@ class RentalFormView(CreateView):
          messages.success(self.request, "Rental information saved successfully.")
          return super().form_valid(form)
 
-     def form_invalid(self, form):
+    def form_invalid(self, form):
          messages.error(self.request, "Rental information failed to save.")
          return super().form_invalid(form)
 
      # form datetime validation
-     def clean(self):
+    def clean(self):
          cleaned_data = super().clean()
          start_rental_date = cleaned_data.get('start_rental_date')
          end_rental_date = cleaned_data.get('end_rental_date')
