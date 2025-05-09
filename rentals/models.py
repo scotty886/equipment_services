@@ -237,6 +237,5 @@ class Service(models.Model):
         if self.start_service_date and self.end_service_date:
             if self.start_service_date > self.end_service_date:
                 raise ValidationError("Start date cannot be after end date.")
-        if self.start_service_date < datetime.date.today():
-            raise ValidationError("Start date cannot be in the past.")
+      
         
