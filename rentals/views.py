@@ -1203,11 +1203,6 @@ class ServiceFormView(CreateView):
             form.add_error('start_service_date', "Start service date must be before end service date.")
             return self.form_invalid(form)
 
-        # start day cannot be in the past
-        if start_service_date < timezone.now().date():
-            form.add_error('start_service_date', "Start service date cannot be in the past.")
-            return self.form_invalid(form)
-
         messages.success(self.request, "Service information saved successfully.")
         return super().form_valid(form)
 
