@@ -105,7 +105,7 @@ class VehicleCreateView(CreateView):
 class VehicleUpdateView(UpdateView):
     """Vehicle update view. This is for the admin to update vehicle details."""
     model = Vehicle
-    template_name = 'vehicle_form.html'
+    template_name = 'vehicle_update.html'
     fields = ['production', 'driver', 'title', 'department', 'vendor', 'vehicle_type', 'plate_number', 'make', 'model', 'color', 'start_rental_date', 'end_rental_date', 'contract_number', 'purchase_order', 'daily_rate', 'weekly_rate', 'monthly_rate', 'tax', 'misc_fees', 'po_total', 'new_swapped', 'notes1', 'notes2', 'notes3']
     context_object_name = 'form'
     success_url = reverse_lazy('vehicle_list')
