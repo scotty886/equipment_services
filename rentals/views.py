@@ -745,7 +745,7 @@ def special_equipment_txt(request):
     """ This will print a text file of all the rental equipment."""
     response = HttpResponse(content_type='text/plain')
     response['Content-Disposition'] = 'attachment; filename="special_rentals_report.txt"'
-    rentals = Rental.objects.filter(category='main_equipment').order_by('start_rental_date')
+    rentals = Rental.objects.filter(category='special_equipment').order_by('start_rental_date')
     lines = []
     for rental in rentals:
         lines.append(f"Rental Item: {rental.rental_item}\n First Name: {rental.first_name}\n Last Name: {rental.last_name}\n Title: {rental.title}\n Department: {rental.department}\n Production: {rental.production}\n Vendor: {rental.vendor}\n Scene Info: {rental.scene_info}\n Start Rental Date: {rental.start_rental_date}\n End Rental Date: {rental.end_rental_date}\n Drop Off Location: {rental.drop_off_location}\n Drop Off Time: {rental.drop_off_time}\n Pick Up Location: {rental.pick_up_location}\n Pick Up Time: {rental.pick_up_time}\n Rental Type: {rental.rental_type}\n Category: {rental.category}\n Additional Tax Fees: {rental.addl_tax_fees}\n Total Cost: {rental.total_cost}\n Purchase Order: {rental.purchase_order}\n Quote Number: {rental.quote_number}\n Notes 1: {rental.notes1}\n Notes 2: {rental.notes2}\n Notes 3: {rental.notes3}\n\n ")
@@ -762,7 +762,7 @@ def special_equipment_csv(request):
     writer = csv.writer(response)
 
     # Designate The Model
-    rentals = Rental.objects.filter(category='main_equipment').order_by('start_rental_date')
+    rentals = Rental.objects.filter(category='special_equipment').order_by('start_rental_date')
 
     # Add colum headings to the csv file
     writer.writerow(
@@ -794,7 +794,7 @@ def special_equipment_pdf(request):
     textob.setTextOrigin(inch, inch)
     textob.setFont("Helvetica", 14)
 
-    rentals = Rental.objects.filter(category='main_equipment').order_by('start_rental_date')
+    rentals = Rental.objects.filter(category='special_equipment').order_by('start_rental_date')
 
     lines = []
 
